@@ -1,0 +1,58 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oh Snap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'scroll-start-first': 'scroll-start 2ms'
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @keyframes scroll-start {
+            from {
+                scroll-snap-align: center;
+            }
+            to {
+                scroll-snap-align: unset;
+            }
+        }
+    </style>
+</head>
+
+<body class="p-0 m-0">
+    <div class="relative w-full flex snap-x overflow-x-auto snap-mandatory">
+        <nav tabindex="0" id="menu" class="shrink-0 w-2/3 h-screen bg-green-400 snap-center">
+        </nav>
+        <main tabindex="0" id="main"
+            class="shrink-0 w-screen h-screen bg-red-400 snap-center animate-scroll-start-first">
+            <h1>Poop</h1>
+        </main>
+    </div>
+
+    <script>
+        // Bring main element into view to hide side menu
+        function showMain(event) {
+            event.target.scrollIntoView({
+                behavior: "smooth",
+                inline: "center"
+            });
+        }
+
+        const main = document.getElementsByTagName("main")[0];
+        main.addEventListener("click", showMain);
+        // Start with main and navigation hidden
+        showMain({target: main});
+    </script>
+</body>
+
+</html>

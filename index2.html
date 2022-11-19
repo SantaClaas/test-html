@@ -1,0 +1,71 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Oh Snap</title>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'scroll-start': 'scroll-start 2ms',
+                        'scroll-end': 'scroll-end 2ms'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @keyframes scroll-start {
+            from {
+                scroll-snap-align: center;
+            }
+            to {
+                scroll-snap-align: unset;
+            }
+        }
+
+        @keyframes scroll-end {
+            from {
+                scroll-snap-align: unset;
+            }
+            to {
+                scroll-snap-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body class="p-0 m-0">
+    <div class="absolute top-0 left-0 w-full flex snap-x overflow-x-auto snap-mandatory">
+        <main tabindex="0" class="shrink-0 w-screen bg-blue-500 active:bg-blue-600 snap-center active:animate-scroll-start peer">
+            <button onclick="console.log('💩')">Poop</button>
+        </main>
+        <nav tabindex="0" id="menu"
+            class="shrink-0 max-w-[66%] w-96 h-screen bg-green-500 active:bg-green-600 pl-4 pt-2 snap-center peer-active:animate-scroll-end">
+            <div class="text-blue-500 text-bold font-black text-7xl text-start leading-loose tracking-widest lowercase">
+                Claas</div>
+            <div class="text-blue-500 text-bold font-black text-7xl text-start leading-loose tracking-widest lowercase">
+                Home</div>
+            <div class="text-blue-500 text-bold font-black text-7xl text-start leading-loose tracking-widest lowercase">
+                About</div>
+            <div class="text-blue-500 text-bold font-black text-7xl text-start leading-loose tracking-widest lowercase">
+                Blog</div>
+            <div class="text-blue-500 text-bold font-black text-7xl text-start leading-loose tracking-widest lowercase">
+                Store</div>
+        </nav>
+    </div>
+
+    <!-- 
+    <main tabindex="0" id="main"
+        class="w-screen h-screen bg-red-400">
+        <button onclick="console.log('💩')">Poop</button>
+    </main> -->
+
+</body>
+
+</html>
