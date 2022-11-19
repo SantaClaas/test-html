@@ -30,10 +30,10 @@
 </head>
 
 <body class="p-0 m-0">
-    <div class="relative w-full flex snap-x overflow-x-auto snap-mandatory">
-        <nav tabindex="0" id="menu" class="shrink-0 w-2/3 h-screen bg-green-400 snap-center">
+    <div id="scrollport" class="relative w-full flex snap-x overflow-x-auto snap-mandatory">
+        <nav tabindex="0" class="shrink-0 w-2/3 h-screen bg-green-400 snap-center">
         </nav>
-        <main tabindex="0" id="main"
+        <main tabindex="0"
             class="shrink-0 w-screen h-screen bg-red-400 snap-center animate-scroll-start-first">
             <h1>Poop</h1>
         </main>
@@ -51,7 +51,39 @@
         const main = document.getElementsByTagName("main")[0];
         main.addEventListener("click", showMain);
         // Start with main and navigation hidden
-        showMain({target: main});
+        showMain({ target: main });
+
+        // Intersection observation
+
+        const scrollport = document.getElementById("scrollport");
+        const scrollitems = scrollport.children;
+        console.log(scrollitems);
+        function intersectionCallback(nodes) {
+            
+            console.log(nodes.length)
+            for (let node of nodes){
+                // Small fun thing
+                if (!node.isIntersecting) {
+                    main.classList.remove("rounded-2xl");
+                    continue;
+                }
+
+                main.classList.add("rounded-2xl")
+
+            }
+                // console.log(`${node.target.tagName}: ${node.intersectionRatio} ${node.isIntersecting}`)
+        }
+
+        const observer = new IntersectionObserver(intersectionCallback, {
+            root: scrollport,
+            threshold: 1
+        });
+
+        
+        for (let item of scrollitems) {
+            console.log("Observe", { observer, item });
+            observer.observe(item);
+        }
     </script>
 </body>
 
