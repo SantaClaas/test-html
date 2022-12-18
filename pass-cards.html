@@ -46,7 +46,7 @@
         <li class="snap-center sticky top-0">
             <!-- boarding pass -->
             <article
-                class="origin-top scale-[var(--scale)] bg-gray-100 rounded-lg aspect-[1/1.62] overflow-hidden flex flex-col justify-between mb-10 shadow-xl border-2 border-blue-300">
+                class="origin-top transition-transform scale-[var(--scale)] bg-gray-100 rounded-lg aspect-[1/1.62] overflow-hidden flex flex-col justify-between mb-10 shadow-xl border-2 border-blue-300">
                 <section>
                     <header class="bg-gray-200 h-12 px-2 pt-2 pb-1 w-full flex justify-between items-center">
                         <div class="bg-gray-300 w-full h-7 align-middle">
@@ -92,7 +92,7 @@
         <li class="snap-center sticky top-0 pt-2">
             <!-- Coupon -->
             <article
-                class="origin-top scale-[var(--scale)] bg-gray-100 rounded-lg aspect-[1/1.62] overflow-hidden flex flex-col justify-between mb-10 shadow-xl border-2 border-blue-300">
+                class="origin-top transition-transform scale-[var(--scale)] bg-gray-100 rounded-lg aspect-[1/1.62] overflow-hidden flex flex-col justify-between mb-10 shadow-xl border-2 border-blue-300">
                 <section>
                     <header class="bg-gray-200 h-12 px-2 pt-2 pb-1 w-full flex justify-between items-center">
                         <div class="bg-gray-300 w-full h-7 align-middle">
@@ -136,7 +136,7 @@
         <li class="snap-center sticky top-0 pt-5">
             <!-- Event ticket with background image -->
             <article
-                class="origin-top scale-[var(--scale)] bg-gray-100 rounded-lg aspect-[1/1.62] overflow-hidden flex flex-col justify-between mb-10 shadow-xl border-2 border-blue-300">
+                class="origin-top transition-transform scale-[var(--scale)] bg-gray-100 rounded-lg aspect-[1/1.62] overflow-hidden flex flex-col justify-between mb-10 shadow-xl border-2 border-blue-300">
                 <section>
                     <header class="bg-gray-200 h-12 px-2 pt-2 pb-1 w-full flex justify-between items-center">
                         <div class="bg-gray-300 w-full h-7 align-middle">
@@ -178,7 +178,7 @@
         <li class="snap-center sticky top-0 pt-8">
             <!-- Event ticket with strip image -->
             <article
-                class="origin-top scale-[var(--scale)] bg-gray-100 rounded-lg aspect-[1/1.62] overflow-hidden flex flex-col justify-between mb-10 shadow-xl border-2 border-blue-300">
+                class="origin-top transition-transform scale-[var(--scale)] bg-gray-100 rounded-lg aspect-[1/1.62] overflow-hidden flex flex-col justify-between mb-10 shadow-xl border-2 border-blue-300">
                 <section>
                     <header class="bg-gray-200 h-12 px-2 pt-2 pb-1 w-full flex justify-between items-center">
                         <div class="bg-gray-300 w-full h-7 align-middle">
@@ -227,7 +227,7 @@
 
             <!-- generic pass -->
             <article
-                class="origin-top scale-[var(--scale)] bg-gray-100 rounded-lg aspect-[1/1.62] overflow-hidden flex flex-col justify-between mb-10 shadow-xl border-2 border-blue-300">
+                class="origin-top transition-transform scale-[var(--scale)] bg-gray-100 rounded-lg aspect-[1/1.62] overflow-hidden flex flex-col justify-between mb-10 shadow-xl border-2 border-blue-300">
                 <section>
                     <header class="bg-gray-200 h-12 px-2 pt-2 pb-1 w-full flex justify-between items-center">
                         <div class="bg-gray-300 w-full h-7 align-middle">
@@ -270,15 +270,6 @@
         const list = document.getElementById("list");
         const children = list.children;
         const count = list.children.length;
-        // for (let index = 0; index < count; index++) {
-        //     const child = list.children[index];
-        //     const position = index + 1;
-        //     const percent = Math.floor(position / count * 100);
-
-        //     console.log({percent});
-        //     child.style.setProperty("--scale", `${percent}%`)
-        // }
-
 
         list.addEventListener("scroll", event => {
             let height = list.clientHeight;
@@ -296,10 +287,7 @@
                 const positionPercent = position / count;
                 const value = (100 - Math.floor(50 * (1 - positionPercent) * percent));
 
-                child.style.setProperty("--scale", `${value}%`)
-                if (index === count - 1) {
-                    console.log(value)
-                }
+                child.style.setProperty("--scale", `${value}%`);
             }
         })
     </script>
