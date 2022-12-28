@@ -1,0 +1,379 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Pass Demo</title>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'scroll-start': 'scroll-start 2ms',
+                        'scroll-end': 'scroll-end 2ms'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @keyframes scroll-start {
+            from {
+                scroll-snap-align: center;
+            }
+            to {
+                scroll-snap-align: unset;
+            }
+        }
+
+        @keyframes scroll-end {
+            from {
+                scroll-snap-align: unset;
+            }
+            to {
+                scroll-snap-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body class="p-4 m-0 scroll-smooth">
+    <!-- border-2 border-red-500 -->
+    <ul id="list" class="text-slate-900 snap-y snap-mandatory overflow-y-auto h-full bg-slate-400/50">
+
+        <li class="sticky top-0">
+            <!-- boarding pass -->
+            <article
+                class="snap-start origin-top transition-transform scale-[var(--scale)] bg-gray-100 rounded-lg aspect-[1/1.62] overflow-hidden flex flex-col justify-between mb-10 shadow-xl border-2 border-blue-300">
+                <section>
+                    <header class="bg-gray-200 h-12 px-2 pt-2 pb-1 w-full flex justify-between items-center">
+                        <div class="bg-gray-300 w-full h-7 align-middle">
+                            <p class="align-middle">Logo</p>
+                        </div>
+                        <div class="bg-gray-300 w-full text-center h-7 align-middle">
+                            <p class="align-middle">Boarding pass</p>
+                        </div>
+                        <div class="bg-gray-300 w-full text-end h-7 align-middle">
+                            <p class="align-middle">Header fields</p>
+                        </div>
+                        <!-- <p class="bg-gray-300 inline place-self-start">Logo</p>
+                <p class="bg-gray-300 inline place-self-center">Logo text</p>
+                <p class="bg-gray-300 inline place-self-end">Header fields</p> -->
+                    </header>
+
+                    <article id="primary-fields" class="bg-gray-200 rounded flex justify-between h-20 px-2 py-1">
+                        <div class="aspect-video bg-gray-300 rounded"></div>
+                        <div class="aspect-video bg-gray-300 rounded"></div>
+                    </article>
+                    <article id="auxiliary-fields" class="bg-gray-200 h-10 px-2 py-1">
+                        <div class="bg-gray-300 bg-gray-200 w-full h-full rounded"></div>
+                    </article>
+                    <article class="bg-gray-200 h-10 px-2 py-1">
+                        <div class="bg-gray-300 bg-gray-200 w-full h-full rounded"></div>
+                    </article>
+                </section>
+
+                <section>
+
+                    <article class="bg-gray-200 h-8 px-2 py-1">
+                        <div class="bg-gray-300 bg-gray-200 w-full h-full rounded"></div>
+                    </article>
+                    <article class="bg-gray-200 px-2 pb-2 pt-1">
+                        <div class="bg-gray-300 bg-gray-200 rounded p-3">
+                            <div class="aspect-square w-60 bg-gray-400 m-auto rounded-xl"></div>
+                        </div>
+                    </article>
+                </section>
+            </article>
+        </li>
+
+        <li class="sticky -top-px pt-px">
+            <!-- Coupon -->
+            <article
+                class="snap-start origin-top transition-transform scale-[var(--scale)] bg-gray-100 rounded-lg aspect-[1/1.62] overflow-hidden flex flex-col justify-between mb-10 shadow-xl border-2 border-blue-300">
+                <section>
+                    <header class="bg-gray-200 h-12 px-2 pt-2 pb-1 w-full flex justify-between items-center">
+                        <div class="bg-gray-300 w-full h-7 align-middle">
+                            <p class="align-middle">Logo</p>
+                        </div>
+                        <div class="bg-gray-300 w-full text-center h-7 align-middle">
+                            <p class="align-middle">Coupon</p>
+                        </div>
+                        <div class="bg-gray-300 w-full text-end h-7 align-middle">
+                            <p class="align-middle">Header fields</p>
+                        </div>
+                        <!-- <p class="bg-gray-300 inline place-self-start">Logo</p>
+                    <p class="bg-gray-300 inline place-self-center">Logo text</p>
+                    <p class="bg-gray-300 inline place-self-end">Header fields</p> -->
+                    </header>
+
+                    <!-- primary field -->
+                    <article class="bg-gray-200 rounded h-32 py-1">
+                        <!-- strip image -->
+                        <div class="bg-gray-300 rounded-none p-2 w-full h-full">
+                            <div class="w-full h-full bg-gray-400 rounded"></div>
+                        </div>
+                    </article>
+
+                    <!-- secondary and auxiliary fields -->
+                    <article class="bg-gray-200 h-12 px-2 py-2">
+                        <div class="bg-gray-300 bg-gray-200 w-full h-full rounded"></div>
+                    </article>
+
+                </section>
+                <section>
+                    <article class="bg-gray-200 px-2 pb-2 pt-1">
+                        <div class="bg-gray-300 bg-gray-200 rounded p-3">
+                            <div class="aspect-square w-60 bg-gray-400 m-auto rounded-xl"></div>
+                        </div>
+                    </article>
+                </section>
+            </article>
+        </li>
+
+        <li class="sticky -top-px pt-px">
+            <!-- Event ticket with background image -->
+            <article
+                class="snap-start origin-top transition-transform scale-[var(--scale)] bg-gray-100 rounded-lg aspect-[1/1.62] overflow-hidden flex flex-col justify-between mb-10 shadow-xl border-2 border-blue-300">
+                <section>
+                    <header class="bg-gray-200 h-12 px-2 pt-2 pb-1 w-full flex justify-between items-center">
+                        <div class="bg-gray-300 w-full h-7 align-middle">
+                            <p class="align-middle">Logo</p>
+                        </div>
+                        <div class="bg-gray-300 w-full text-center h-7 align-middle">
+                            <p class="align-middle">Event ticket 1</p>
+                        </div>
+                        <div class="bg-gray-300 w-full text-end h-7 align-middle">
+                            <p class="align-middle">Header fields</p>
+                        </div>
+                    </header>
+
+                    <article class="bg-gray-200 rounded h-34 py-1">
+                        <div class="flex gap-1 bg-gray-300 h-full w-full p-1">
+                            <div class="flex flex-col gap-1 bg-gray-400 h-full w-full p-1">
+                                <div class="bg-gray-500 h-2/3 w-full p-1"></div>
+                                <div class="bg-gray-500 h-1/3 w-full p-1"></div>
+                            </div>
+                            <div class="h-full aspect-[3/4] bg-gray-400 rounded-lg"></div>
+                        </div>
+                    </article>
+
+                    <article class="bg-gray-200 h-12 px-2 py-2">
+                        <div class="bg-gray-300 bg-gray-200 w-full h-full rounded"></div>
+                    </article>
+
+                </section>
+                <section>
+                    <article class="bg-gray-200 px-2 pb-2 pt-1">
+                        <div class="bg-gray-300 bg-gray-200 rounded p-3">
+                            <div class="aspect-square w-60 bg-gray-400 m-auto rounded-xl"></div>
+                        </div>
+                    </article>
+                </section>
+            </article>
+        </li>
+
+        <li class="sticky -top-px pt-px">
+            <!-- Event ticket with strip image -->
+            <article
+                class="snap-start origin-top transition-transform scale-[var(--scale)] bg-gray-100 rounded-lg aspect-[1/1.62] overflow-hidden flex flex-col justify-between mb-10 shadow-xl border-2 border-blue-300">
+                <section>
+                    <header class="bg-gray-200 h-12 px-2 pt-2 pb-1 w-full flex justify-between items-center">
+                        <div class="bg-gray-300 w-full h-7 align-middle">
+                            <p class="align-middle">Logo</p>
+                        </div>
+                        <div class="bg-gray-300 w-full text-center h-7 align-middle">
+                            <p class="align-middle">Event ticket 2</p>
+                        </div>
+                        <div class="bg-gray-300 w-full text-end h-7 align-middle">
+                            <p class="align-middle">Header fields</p>
+                        </div>
+                        <!-- <p class="bg-gray-300 inline place-self-start">Logo</p>
+                    <p class="bg-gray-300 inline place-self-center">Logo text</p>
+                    <p class="bg-gray-300 inline place-self-end">Header fields</p> -->
+                    </header>
+
+                    <!-- primary field -->
+                    <article class="bg-gray-200 rounded h-32 py-1">
+                        <!-- strip image -->
+                        <div class="bg-gray-300 rounded-none p-2 w-full h-full">
+                            <div class="w-full h-full bg-gray-400 rounded"></div>
+                        </div>
+                    </article>
+
+                    <!-- secondary fields -->
+                    <article class="bg-gray-200 h-12 px-2 py-2">
+                        <div class="bg-gray-300 bg-gray-200 w-full h-full rounded"></div>
+                    </article>
+                    <!-- auxiliary fields  -->
+                    <article class="bg-gray-200 h-12 px-2 py-2">
+                        <div class="bg-gray-300 bg-gray-200 w-full h-full rounded"></div>
+                    </article>
+
+                </section>
+                <section>
+                    <article class="bg-gray-200 px-2 pb-2 pt-1">
+                        <div class="bg-gray-300 bg-gray-200 rounded p-3">
+                            <div class="aspect-square w-60 bg-gray-400 m-auto rounded-xl"></div>
+                        </div>
+                    </article>
+                </section>
+            </article>
+        </li>
+
+        <li class="sticky -top-px pt-px">
+
+            <!-- generic pass -->
+            <article
+                class="snap-start origin-top transition-transform scale-[var(--scale)] bg-gray-100 rounded-lg aspect-[1/1.62] overflow-hidden flex flex-col justify-between mb-10 shadow-xl border-2 border-blue-300">
+                <section>
+                    <header class="bg-gray-200 h-12 px-2 pt-2 pb-1 w-full flex justify-between items-center">
+                        <div class="bg-gray-300 w-full h-7 align-middle">
+                            <p class="align-middle">Logo</p>
+                        </div>
+                        <div class="bg-gray-300 w-full text-center h-7 align-middle">
+                            <p class="align-middle">Generic pass</p>
+                        </div>
+                        <div class="bg-gray-300 w-full text-end h-7 align-middle">
+                            <p class="align-middle">Header fields</p>
+                        </div>
+                    </header>
+
+                    <article class="bg-gray-200 rounded h-34 py-1">
+                        <div class="flex gap-1 bg-gray-300 h-full w-full p-1">
+                            <div class="flex flex-col gap-1 bg-gray-400 h-full w-full p-1 rounded-lg">
+                            </div>
+                            <div class="h-full aspect-[3/4] bg-gray-400 rounded-lg"></div>
+                        </div>
+                    </article>
+
+                    <article class="bg-gray-200 h-12 px-2 py-2">
+                        <div class="bg-gray-300 bg-gray-200 w-full h-full rounded"></div>
+                    </article>
+
+                </section>
+                <section>
+                    <article class="bg-gray-200 px-2 pb-2 pt-1">
+                        <div class="bg-gray-300 bg-gray-200 rounded p-3">
+                            <div class="aspect-square w-60 bg-gray-400 m-auto rounded-xl"></div>
+                        </div>
+                    </article>
+                </section>
+            </article>
+        </li>
+
+        <li class="sticky -top-px pt-px">
+
+            <!-- generic pass -->
+            <article
+                class="snap-start origin-top transition-transform scale-[var(--scale)] bg-gray-100 rounded-lg aspect-[1/1.62] overflow-hidden flex flex-col justify-between mb-10 shadow-xl border-2 border-blue-300">
+                <section>
+                    <header class="bg-gray-200 h-12 px-2 pt-2 pb-1 w-full flex justify-between items-center">
+                        <div class="bg-gray-300 w-full h-7 align-middle">
+                            <p class="align-middle">Logo</p>
+                        </div>
+                        <div class="bg-gray-300 w-full text-center h-7 align-middle">
+                            <p class="align-middle">Generic pass</p>
+                        </div>
+                        <div class="bg-gray-300 w-full text-end h-7 align-middle">
+                            <p class="align-middle">Header fields</p>
+                        </div>
+                    </header>
+
+                    <article class="bg-gray-200 rounded h-34 py-1">
+                        <div class="flex gap-1 bg-gray-300 h-full w-full p-1">
+                            <div class="flex flex-col gap-1 bg-gray-400 h-full w-full p-1 rounded-lg">
+                            </div>
+                            <div class="h-full aspect-[3/4] bg-gray-400 rounded-lg"></div>
+                        </div>
+                    </article>
+
+                    <article class="bg-gray-200 h-12 px-2 py-2">
+                        <div class="bg-gray-300 bg-gray-200 w-full h-full rounded"></div>
+                    </article>
+
+                </section>
+                <section>
+                    <article class="bg-gray-200 px-2 pb-2 pt-1">
+                        <div class="bg-gray-300 bg-gray-200 rounded p-3">
+                            <div class="aspect-square w-60 bg-gray-400 m-auto rounded-xl"></div>
+                        </div>
+                    </article>
+                </section>
+            </article>
+        </li>
+    </ul>
+
+    <script>
+
+        function floor(value) {
+            return Math.floor(value * 1000);
+        }
+        const list = document.getElementById("list");
+        const children = Array.from(list.children);
+        const states = new Map(children.map((_, index) => [index, { previous: 0, prePrevious: 0 }]));
+        // We use a set to avoid duplicate indices from when the intersection observer can't keep up due to too fast scrolling
+        const allStickied = new Set();
+        const thresholds = [1];
+
+        function handleEntry(entry) {
+            const index = children.indexOf(entry.target);
+            // Ignore the last index as it behaves weirdly and can't snap anyways
+            if (index === 0 || index === children.length - 1)
+                return;
+
+            const indexStates = states.get(index);
+            let { previous, prePrevious } = indexStates;
+
+            const current = floor(entry.intersectionRatio)
+
+            const isStickied = current < previous && prePrevious < previous && prePrevious < current;
+            const isUnstickied = current < previous && prePrevious < previous && current < prePrevious;
+
+            if (isStickied) {
+                allStickied.add(index);
+            }
+
+            if (isUnstickied) {
+                allStickied.delete(index);
+            }
+
+            // Ensure all are unstickied if second element is unstickied and all are stickied if the one before last is stickied
+            // This is error correction for the case the cards are scrolled too quickly and the intersection observer can't keep up
+            if (index === 1 && isUnstickied) {
+                // If first stickable element is unstickied we clear as no should be in there.
+                // This is done for error correction. "As we go over the edge we clear all behind us"
+                allStickied.clear();
+            }
+            // As we go over the other edge we ensure all other elements are registered as snapped
+            else if (index === children.length - 2 && isStickied) {
+                for (let index = 1; index < children.length - 1; index++) {
+                    allStickied.add(index);
+                }
+            }
+
+            if (isUnstickied || isStickied)
+                console.log("Stickied", [...allStickied.values()]);
+
+            // console.log("Intersect", { isSnap, isUnsnap, current, previous, prePrevious });
+            indexStates.prePrevious = previous;
+            indexStates.previous = current;
+            states[index] = indexStates;
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(handleEntry);
+        }, {
+            root: list,
+            threshold: thresholds
+        })
+
+        children.forEach(child => observer.observe(child));
+
+    </script>
+</body>
+
+</html>
