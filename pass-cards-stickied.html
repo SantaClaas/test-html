@@ -40,11 +40,11 @@
     </style>
 </head>
 
-<body class="p-4 m-0 scroll-smooth overflow-visible">
+<body class="p-4 m-0 scroll-smooth">
     <!-- border-2 border-red-500 -->
     <ul id="list" class="text-slate-900 snap-y snap-mandatory overflow-y-auto h-full bg-slate-400/50">
 
-        <li class="sticky top-0 translate-y-[var(--pass-stack-move-y)]">
+        <li class="sticky top-0">
             <!-- boarding pass -->
             <article
                 class="snap-start origin-top transition-transform scale-[var(--scale)] bg-gray-100 rounded-lg aspect-[1/1.62] overflow-hidden flex flex-col justify-between mb-10 shadow-xl border-2 border-blue-300">
@@ -90,7 +90,7 @@
             </article>
         </li>
 
-        <li class="sticky -top-px pt-px translate-y-[var(--pass-stack-move-y)]">
+        <li class="sticky -top-px pt-px">
             <!-- Coupon -->
             <article
                 class="snap-start origin-top transition-transform scale-[var(--scale)] bg-gray-100 rounded-lg aspect-[1/1.62] overflow-hidden flex flex-col justify-between mb-10 shadow-xl border-2 border-blue-300">
@@ -134,7 +134,7 @@
             </article>
         </li>
 
-        <li class="sticky -top-px pt-px translate-y-[var(--pass-stack-move-y)]">
+        <li class="sticky -top-px pt-px">
             <!-- Event ticket with background image -->
             <article
                 class="snap-start origin-top transition-transform scale-[var(--scale)] bg-gray-100 rounded-lg aspect-[1/1.62] overflow-hidden flex flex-col justify-between mb-10 shadow-xl border-2 border-blue-300">
@@ -176,7 +176,7 @@
             </article>
         </li>
 
-        <li class="sticky -top-px pt-px translate-y-[var(--pass-stack-move-y)]">
+        <li class="sticky -top-px pt-px">
             <!-- Event ticket with strip image -->
             <article
                 class="snap-start origin-top transition-transform scale-[var(--scale)] bg-gray-100 rounded-lg aspect-[1/1.62] overflow-hidden flex flex-col justify-between mb-10 shadow-xl border-2 border-blue-300">
@@ -224,7 +224,7 @@
             </article>
         </li>
 
-        <li class="sticky -top-px pt-px translate-y-[var(--pass-stack-move-y)]">
+        <li class="sticky -top-px pt-px">
 
             <!-- generic pass -->
             <article
@@ -265,7 +265,7 @@
             </article>
         </li>
 
-        <li class="sticky -top-px pt-px translate-y-[var(--pass-stack-move-y)]">
+        <li class="sticky -top-px pt-px">
 
             <!-- generic pass -->
             <article
@@ -366,23 +366,6 @@
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(handleEntry);
-
-            // Add transform for elements behind front stickied element
-            // Get children behind front
-            const elementsToTransform = [...allStickied.values()].sort().slice(0, -1);
-
-            const highestIndex = [...allStickied.values()].sort()//Math.max(...[...allStickied.values()]);
-            for (let index = 0; index < children.length; index++) {
-                const element = children[index];
-                console.warn({highestIndex});
-                // element.style.setProperty("--pass-stack-move-y", `${(children.length - index )}rem`);
-                
-            }
-            // for (const elementIndex of elementsToTransform) {
-            //     console.warn(elementIndex);
-            //     const element = children[elementIndex];
-            //     // console.warn(element.style);
-            // }
         }, {
             root: list,
             threshold: thresholds
