@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "App", "claas.dev\src\App.fsproj", "{D0087C1E-BD6C-4685-8EE8-84E5427D8C8D}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Browser.Svg", "fable browser\src\Svg\Browser.Svg.fsproj", "{1F9DAABB-11FC-46D7-B17F-BC4DC5658E42}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Browser.Dom", "fable browser\src\Dom\Browser.Dom.fsproj", "{CDBC3E1F-87B1-45DC-A6E8-AC6F394A65B7}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Browser.Css", "fable browser\src\Css\Browser.Css.fsproj", "{85F85950-7616-49A7-9921-A6878E253EFE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D0087C1E-BD6C-4685-8EE8-84E5427D8C8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0087C1E-BD6C-4685-8EE8-84E5427D8C8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0087C1E-BD6C-4685-8EE8-84E5427D8C8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0087C1E-BD6C-4685-8EE8-84E5427D8C8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F9DAABB-11FC-46D7-B17F-BC4DC5658E42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F9DAABB-11FC-46D7-B17F-BC4DC5658E42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F9DAABB-11FC-46D7-B17F-BC4DC5658E42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F9DAABB-11FC-46D7-B17F-BC4DC5658E42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDBC3E1F-87B1-45DC-A6E8-AC6F394A65B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDBC3E1F-87B1-45DC-A6E8-AC6F394A65B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDBC3E1F-87B1-45DC-A6E8-AC6F394A65B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDBC3E1F-87B1-45DC-A6E8-AC6F394A65B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85F85950-7616-49A7-9921-A6878E253EFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85F85950-7616-49A7-9921-A6878E253EFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85F85950-7616-49A7-9921-A6878E253EFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85F85950-7616-49A7-9921-A6878E253EFE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
